@@ -2,11 +2,11 @@ function fn_1(data) {  //웹서버에서 데이터 받을거니까 걍 변수명
     // console.log(data) 이걸 다 끌고올 필욘 없겠지 ㅎㅎ
     $('#temp').html(data.main.temp);
     // console.log(data.weather[0].description); //DOM 바꾸기 전에 일단 이렇게 해서 데이터 잘 읽혀지나 점검해보자. 잘 되니 이제 DOM에 사용하자.
-    // console.log(data.weather[0].icon);  //근데 02d로 뜸 ㅋㅋ 사이트 가면 코드 활용 페이지 있음. 스트링 보간으로 해결하자. `(~ 소문자)
+    // console.log(data.weather[0].icon);  //'02d'로 뜸 ㅋㅋ 사이트 코드 활용 페이지 참고해서 스트링 보간 `(백틱) 해서 해결.
     $('#p2').html(data.weather[0].description);
     x = data.weather[0].icon;
-    // $("#img1").attr("src", `http://openweathermap.org/img/wn/10d@2x.png`);   // '' 아님 ``임... backquote, backtick이란 놈. 스트링 보간용 string-formatting같은.. template strings임.
-    $("#img1").attr("src", `http://openweathermap.org/img/wn/${x}@2x.png`);   // ${}로 스트링 보간! 다른 방법은 +로 concat인데 지저분
+    // $("#img1").attr("src", `http://openweathermap.org/img/wn/10d@2x.png`);   // '' 아님 ``임... backquote/backtick. 스트링 보간용 template strings임.
+    $("#img1").attr("src", `http://openweathermap.org/img/wn/${x}@2x.png`);   // ${}랑 ' '로 스트링 보간! 다른 방법은 +로 concat인데 지저분
     
 
 }  
@@ -26,7 +26,7 @@ function get_weather_fn(){
             // url: server u want to reach. how the browser will construct RQ and send it over the internet
             // url 어디서 갖고오냐 사이트 API 섹션. current weather data doc 가면 첫째줄에
             // API call 있음. 그게 네 RQ를 위한 URL임
-            // 오렌지색 스트링들은 너의 값들로 바꿔줘야 함. URL variable이라 하자 ㅋㅋ
+            // 그 사이트의 오렌지색 스트링들은 너의 값들로 바꿔줘야 함. URL variable이라 하자 ㅋㅋ
             // appid는 내 유니크한 거임 가입해서 생성해야 함. 로긴해서 내 api key
             "url":`https://api.openweathermap.org/data/2.5/weather?q=${y}&appid=e0e57b76f8f73f98fcb7b5ddb8301846&units=metric`,  // 변수(도시명)이 하나 이상이라면 &로 잘 구분하고 unitㄴ=metric은 신경 끄삼
             // 변수가 3개임 q, appid, units 이상 첫 키밸류.   
