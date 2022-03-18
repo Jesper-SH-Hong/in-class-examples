@@ -17,8 +17,7 @@ function get_w_f(){
     //ajax
     $.ajax( // input. object임 {}로 object를 나타냄.
         {
-            // "url":`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=e0e57b76f8f73f98fcb7b5ddb8301846&unit=metric`,
-            "url":`https://nameless-mesa-00708.herokuapp.com/q=Vancouver&appid=123456`,
+            "url":`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=e0e57b76f8f73f98fcb7b5ddb8301846&unit=metric`,
             "type": "GET",    // 여러 도시면 위에 units
             "success": f_1    //jquery syntax success event가 트리거 되면.. 즉 저 url 그러면 이 procces_가 함ㅅ ㅜ핸들러인데 걍 f_1이라 할래
             //그리고 위에다 만들래 f_1
