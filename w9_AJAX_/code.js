@@ -1,3 +1,5 @@
+//안 도는 코드임 걍 수업중한 거. 설명은 my_code.js 참고하셋ㅁ
+
 function f_1(data) {
     console.log(data)
     $('#temp').html(data.main.temp)
@@ -7,7 +9,7 @@ function f_1(data) {
     $('#p2').html(data.weather[0].description);
     x= data.weather[0].icon; //string interpolatoin standby
     // $('#img1').attr("src", console.log(data.weather[0].icon));
-    $('#img1').attr("src", 'http://openweathermap.org/img/wn/${x}@2x.png');
+    $('#img1').attr("src", `http://openweathermap.org/img/wn/${x}@2x.png`);
 
 
 }
