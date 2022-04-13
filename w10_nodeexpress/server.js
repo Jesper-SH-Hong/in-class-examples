@@ -3,6 +3,8 @@ const app = express() //app은 server를 만드는 데 도움 줌. constructor
 const collection = require('./data.js')
 const valid_keys = require('./valid_keys.js')
 
+const cors = require('cors');
+app.use(cors());
 
 // app.listen(5000) // 아래랑 같은 거. 한 서버가 동시에 2개 열리면 안됨!!
 
@@ -49,7 +51,7 @@ app.get('/', function (req, res) {
     )) { 
         res.json(collection["cities"].find(
             // (city) => city.name == "Vancouver"
-            (city) => city.name == `${req.query["q"]}`   //request 즉 주소에서 읽어오긔 ㅋㅋ
+            (city) => city.name == req.query["q"]   //request 즉 주소에서 읽어오긔 ㅋㅋ
         ))
     }
     else{

@@ -13,9 +13,10 @@ function get_w_f() {
 
 
 
-function setup()
-
-$(document).ready(setup) {
-    alert();
+function setup(){
+    // alert();
     $('#get_w').click(get_w_f);
+    
 }
+
+$(document).ready(setup);
